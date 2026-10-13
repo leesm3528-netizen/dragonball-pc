@@ -1,0 +1,15 @@
+{
+  "error": "upstream_error",
+  "message": "Naver Search API responded with 404.",
+  "proxy": {
+    "name": "k-skill-proxy",
+    "cache": {
+      "hit": false,
+      "ttl_ms": 300000
+    }
+  },
+  "upstream": {
+    "status_code": 404,
+    "body_snippet": "{\n        \"errorMessage\": \"Invalid search api (존재하지 않는 검색 api 입니다.)\",\n        \"errorCode\": \"SE05\"\n}\n"
+  }
+}

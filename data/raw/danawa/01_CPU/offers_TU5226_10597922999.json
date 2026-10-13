@@ -1,0 +1,15 @@
+{
+  "pcode": "TU5226_10597922999",
+  "title": "",
+  "source_url": "https://prod.danawa.com/info/?pcode=TU5226_10597922999",
+  "count": 0,
+  "normal_count": 0,
+  "conditional_count": 0,
+  "offers": [],
+  "meta": {
+    "extraction": "danawa-price-ajax",
+    "include_shipping": false,
+    "sort": "total_price",
+    "ts": 1791878130
+  }
+}

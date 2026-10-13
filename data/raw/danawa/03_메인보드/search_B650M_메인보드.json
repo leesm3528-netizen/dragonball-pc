@@ -1,0 +1,111 @@
+{
+  "query": "B650M 메인보드",
+  "source_url": "https://search.danawa.com/dsearch.php?query=B650M%20%EB%A9%94%EC%9D%B8%EB%B3%B4%EB%93%9C",
+  "count": 10,
+  "items": [
+    {
+      "pcode": "76509641",
+      "title": "ASRock B650M Pro X3D 에즈윈",
+      "price": 125600,
+      "price_text": "125,600원",
+      "mall_text": "",
+      "url": "https://prod.danawa.com/info/?pcode=76509641&keyword=B650M+%EB%A9%94%EC%9D%B8%EB%B3%B4%EB%93%9C&cate=112751",
+      "image_url": "https://img.danuri.io/catalog-image/641/509/076/3c1e7557f65c4f8483a65ac7a482db3e.jpg",
+      "spec": "AMD(소켓AM5) / AMD B650 / DDR5 / VGA 연결 / PCIe5.0 x16 / M-ATX (24.4x24.4cm) / M.2 / 3개 / USB A타입 / USB C타입"
+    },
+    {
+      "pcode": "21727307",
+      "title": "GIGABYTE B650M K 피씨디렉트",
+      "price": 112080,
+      "price_text": "112,080원",
+      "mall_text": "",
+      "url": "https://prod.danawa.com/info/?pcode=21727307&keyword=B650M+%EB%A9%94%EC%9D%B8%EB%B3%B4%EB%93%9C&cate=112751",
+      "image_url": "https://img.danuri.io/catalog-image/307/727/021/ae16eb7d429241e5bc56043aaa1d4577.jpg",
+      "spec": "AMD(소켓AM5) / AMD B650 / DDR5 / VGA 연결 / PCIe4.0 x16 / M-ATX (24.4x24.4cm) / M.2 / 2개 / USB A타입 / USB C타입"
+    },
+    {
+      "pcode": "20324882",
+      "title": "GIGABYTE B650M K 제이씨현",
+      "price": 112980,
+      "price_text": "112,980원",
+      "mall_text": "",
+      "url": "https://prod.danawa.com/info/?pcode=20324882&keyword=B650M+%EB%A9%94%EC%9D%B8%EB%B3%B4%EB%93%9C&cate=112751",
+      "image_url": "https://img.danuri.io/catalog-image/882/324/020/8a13429eca6544eb983c4820c6912413.jpg",
+      "spec": "AMD(소켓AM5) / AMD B650 / DDR5 / VGA 연결 / PCIe4.0 x16 / M-ATX (24.4x24.4cm) / M.2 / 2개 / USB A타입 / USB C타입"
+    },
+    {
+      "pcode": "17971187",
+      "title": "MSI MAG B650M 박격포 WIFI",
+      "price": 205980,
+      "price_text": "205,980원",
+      "mall_text": "",
+      "url": "https://prod.danawa.com/info/?pcode=17971187&keyword=B650M+%EB%A9%94%EC%9D%B8%EB%B3%B4%EB%93%9C&cate=112751",
+      "image_url": "https://img.danuri.io/catalog-image/187/971/017/7d2a1b192c9c46b5922dc755a5e3c08d.jpg",
+      "spec": "AMD(소켓AM5) / AMD B650 / DDR5 / VGA 연결 / PCIe4.0 x16 / M-ATX (24.4x24.4cm) / M.2 / 2개 / USB A타입 / USB C타입"
+    },
+    {
+      "pcode": "77786816",
+      "title": "ASRock B650M Pro X3D 디앤디컴",
+      "price": 133410,
+      "price_text": "133,410원",
+      "mall_text": "",
+      "url": "https://prod.danawa.com/info/?pcode=77786816&keyword=B650M+%EB%A9%94%EC%9D%B8%EB%B3%B4%EB%93%9C&cate=112751",
+      "image_url": "https://img.danawa.com/new/noData/img/noImg_160.gif",
+      "spec": "AMD(소켓AM5) / AMD B650 / DDR5 / VGA 연결 / PCIe5.0 x16 / M-ATX (24.4x24.4cm) / M.2 / 3개 / USB A타입 / USB C타입"
+    },
+    {
+      "pcode": "62568890",
+      "title": "MSI PRO B650M-A",
+      "price": 149850,
+      "price_text": "149,850원",
+      "mall_text": "",
+      "url": "https://prod.danawa.com/info/?pcode=62568890&keyword=B650M+%EB%A9%94%EC%9D%B8%EB%B3%B4%EB%93%9C&cate=112751",
+      "image_url": "https://img.danawa.com/new/noData/img/noImg_160.gif",
+      "spec": "AMD(소켓AM5) / AMD B650 / DDR5 / VGA 연결 / PCIe4.0 x16 / M-ATX (24.3x24.3cm) / M.2 / 2개 / USB A타입 / 2.5Gbps"
+    },
+    {
+      "pcode": "17971181",
+      "title": "MSI MAG B650 토마호크 WIFI",
+      "price": 249060,
+      "price_text": "249,060원",
+      "mall_text": "",
+      "url": "https://prod.danawa.com/info/?pcode=17971181&keyword=B650M+%EB%A9%94%EC%9D%B8%EB%B3%B4%EB%93%9C&cate=112751",
+      "image_url": "https://img.danawa.com/new/noData/img/noImg_160.gif",
+      "spec": "AMD(소켓AM5) / AMD B650 / DDR5 / VGA 연결 / PCIe4.0 x16 / ATX (30.5x24.4cm) / M.2 / 3개 / USB A타입 / USB C타입"
+    },
+    {
+      "pcode": "17971184",
+      "title": "MSI PRO B650M-A WIFI",
+      "price": 165980,
+      "price_text": "165,980원",
+      "mall_text": "",
+      "url": "https://prod.danawa.com/info/?pcode=17971184&keyword=B650M+%EB%A9%94%EC%9D%B8%EB%B3%B4%EB%93%9C&cate=112751",
+      "image_url": "https://img.danawa.com/new/noData/img/noImg_160.gif",
+      "spec": "AMD(소켓AM5) / AMD B650 / DDR5 / VGA 연결 / PCIe4.0 x16 / M-ATX (24.4x24.4cm) / M.2 / 2개 / USB A타입 / 2.5Gbps"
+    },
+    {
+      "pcode": "76948292",
+      "title": "MAXSUN e스포츠 B650ITX WIFI ICE 디앤디컴",
+      "price": 182840,
+      "price_text": "182,840원",
+      "mall_text": "",
+      "url": "https://prod.danawa.com/info/?pcode=76948292&keyword=B650M+%EB%A9%94%EC%9D%B8%EB%B3%B4%EB%93%9C&cate=112751",
+      "image_url": "https://img.danawa.com/new/noData/img/noImg_160.gif",
+      "spec": "AMD(소켓AM5) / AMD B650 / DDR5 / VGA 연결 / PCIe5.0 x16 / M-iTX (17.0x17.0cm) / M.2 / 2개 / USB A타입 / 2.5Gbps"
+    },
+    {
+      "pcode": "99893756",
+      "title": "ASUS TUF Gaming B650EM-E WIFI 인텍앤컴퍼니",
+      "price": 199000,
+      "price_text": "199,000원",
+      "mall_text": "",
+      "url": "https://prod.danawa.com/info/?pcode=99893756&keyword=B650M+%EB%A9%94%EC%9D%B8%EB%B3%B4%EB%93%9C&cate=112751",
+      "image_url": "https://img.danawa.com/new/noData/img/noImg_160.gif",
+      "spec": "AMD(소켓AM5) / AMD B650 / DDR5 / VGA 연결 / PCIe5.0 x16 / M-ATX (24.4x24.4cm) / M.2 / 3개 / USB A타입 / USB C타입"
+    }
+  ],
+  "meta": {
+    "extraction": "danawa-search-html",
+    "ts": 1791876349
+  }
+}

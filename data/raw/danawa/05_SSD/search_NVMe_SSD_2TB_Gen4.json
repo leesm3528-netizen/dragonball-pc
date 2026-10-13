@@ -1,0 +1,111 @@
+{
+  "query": "NVMe SSD 2TB Gen4",
+  "source_url": "https://search.danawa.com/dsearch.php?query=NVMe%20SSD%202TB%20Gen4",
+  "count": 10,
+  "items": [
+    {
+      "pcode": "74056484",
+      "title": "키오시아 EXCERIA PLUS G4 M.2 NVMe",
+      "price": 465000,
+      "price_text": "465,000원",
+      "mall_text": "2TB 233원/1GB",
+      "url": "https://prod.danawa.com/info/?pcode=74056484&keyword=NVMe+SSD+2TB+Gen4&cate=112760",
+      "image_url": "https://img.danuri.io/catalog-image/484/056/074/032a55236b8a4b25ae03a852d9811fff.jpg",
+      "spec": "M.2 (2280) / PCIe5.0x4 (128GT/s) / TLC / 컨트롤러 / 파이슨 PS5031-E31T / 순차읽기 / 10,000MB/s / 순차쓰기 / 8,200MB/s / GC"
+    },
+    {
+      "pcode": "78716720",
+      "title": "삼성전자 9100 PRO M.2 NVMe",
+      "price": 928470,
+      "price_text": "928,470원",
+      "mall_text": "2TB 464원/1GB",
+      "url": "https://prod.danawa.com/info/?pcode=78716720&keyword=NVMe+SSD+2TB+Gen4&cate=112760",
+      "image_url": "https://img.danuri.io/catalog-image/720/716/078/a5ee01851aec4e16ba2c6130b2dcb4d2.jpg",
+      "spec": "M.2 (2280) / PCIe5.0x4 (128GT/s) / TLC(토글) / DRAM 탑재 / DDR4 2GB / 컨트롤러 / 삼성 Presto / 순차읽기 / 14,700MB/s / 순차쓰기"
+    },
+    {
+      "pcode": "98242532",
+      "title": "ESSENCORE KLEVV CRAS C910G M.2 NVMe",
+      "price": 498900,
+      "price_text": "498,900원",
+      "mall_text": "2TB 249원/1GB",
+      "url": "https://prod.danawa.com/info/?pcode=98242532&keyword=NVMe+SSD+2TB+Gen4&cate=112760",
+      "image_url": "https://img.danuri.io/catalog-image/532/242/098/0781a7764f374876af08fbda18c96fa2.jpg",
+      "spec": "M.2 (2280) / PCIe4.0x4 (64GT/s) / TLC / 컨트롤러 / 기타 / 순차읽기 / 5,200MB/s / 순차쓰기 / 4,800MB/s / TRIM"
+    },
+    {
+      "pcode": "72823133",
+      "title": "SK하이닉스 Platinum P51 M.2 NVMe",
+      "price": 987990,
+      "price_text": "987,990원",
+      "mall_text": "2TB 494원/1GB",
+      "url": "https://prod.danawa.com/info/?pcode=72823133&keyword=NVMe+SSD+2TB+Gen4&cate=112760",
+      "image_url": "https://img.danuri.io/catalog-image/133/823/072/4308b51ecd834e19a2cb0d5942e55a16.jpg",
+      "spec": "M.2 (2280) / PCIe5.0x4 (128GT/s) / TLC(토글) / DRAM 탑재 / DDR4 2GB / 컨트롤러 / SK하이닉스 Alistar / 순차읽기 / 14,700MB/s / 순차쓰기"
+    },
+    {
+      "pcode": "122687622",
+      "title": "YMTC ZHITAI TiPro9000 M.2 NVMe",
+      "price": 648570,
+      "price_text": "648,570원",
+      "mall_text": "2TB 324원/1GB",
+      "url": "https://prod.danawa.com/info/?pcode=122687622&keyword=NVMe+SSD+2TB+Gen4&cate=112760",
+      "image_url": "https://img.danawa.com/new/noData/img/noImg_160.gif",
+      "spec": "M.2 (2280) / PCIe5.0x4 (128GT/s) / TLC / DRAM 탑재 / DDR4 2GB / 컨트롤러 / 실리콘모션 SM2508 / 순차읽기 / 14,900MB/s / 순차쓰기"
+    },
+    {
+      "pcode": "88133846",
+      "title": "ADATA XPG MARS 980 BLADE M.2 NVMe",
+      "price": 647040,
+      "price_text": "647,040원",
+      "mall_text": "2TB 324원/1GB",
+      "url": "https://prod.danawa.com/info/?pcode=88133846&keyword=NVMe+SSD+2TB+Gen4&cate=112760",
+      "image_url": "https://img.danawa.com/new/noData/img/noImg_160.gif",
+      "spec": "M.2 (2280) / PCIe5.0x4 (128GT/s) / TLC / DRAM 탑재 / 컨트롤러 / 실리콘모션 SM2508 / 순차읽기 / 14,000MB/s / 순차쓰기 / 13,000MB/s"
+    },
+    {
+      "pcode": "91494878",
+      "title": "마이크론 Crucial P510 M.2 NVMe 대원씨티에스",
+      "price": 517000,
+      "price_text": "517,000원",
+      "mall_text": "2TB 259원/1GB",
+      "url": "https://prod.danawa.com/info/?pcode=91494878&keyword=NVMe+SSD+2TB+Gen4&cate=112760",
+      "image_url": "https://img.danawa.com/new/noData/img/noImg_160.gif",
+      "spec": "M.2 (2280) / PCIe5.0x4 (128GT/s) / TLC / 컨트롤러 / 파이슨 PS5031-E31T / 순차읽기 / 10,000MB/s / 순차쓰기 / 8,700MB/s / HMB"
+    },
+    {
+      "pcode": "108392261",
+      "title": "Seagate 파이어쿠다 X1070 M.2 NVMe",
+      "price": 926080,
+      "price_text": "926,080원",
+      "mall_text": "2TB 463원/1GB",
+      "url": "https://prod.danawa.com/info/?pcode=108392261&keyword=NVMe+SSD+2TB+Gen4&cate=112760",
+      "image_url": "https://img.danawa.com/new/noData/img/noImg_160.gif",
+      "spec": "M.2 (2280) / PCIe4.0x4 (64GT/s) / QLC / 컨트롤러 / 기타 / 순차읽기 / 7,200MB/s / 순차쓰기 / 6,500MB/s / S.M.A.R.T"
+    },
+    {
+      "pcode": "95424824",
+      "title": "BIWIN Black Opal X570 M.2 NVMe",
+      "price": 504700,
+      "price_text": "504,700원",
+      "mall_text": "2TB 252원/1GB",
+      "url": "https://prod.danawa.com/info/?pcode=95424824&keyword=NVMe+SSD+2TB+Gen4&cate=112760",
+      "image_url": "https://img.danawa.com/new/noData/img/noImg_160.gif",
+      "spec": "M.2 (2280) / PCIe5.0x4 (128GT/s) / TLC / 컨트롤러 / Maxio / 순차읽기 / 14,500MB/s / 순차쓰기 / 10,000MB/s / TRIM"
+    },
+    {
+      "pcode": "96853958",
+      "title": "Western Digital WD Blue SN5100 M.2 NVMe",
+      "price": 411180,
+      "price_text": "411,180원",
+      "mall_text": "2TB 206원/1GB",
+      "url": "https://prod.danawa.com/info/?pcode=96853958&keyword=NVMe+SSD+2TB+Gen4&cate=112760",
+      "image_url": "https://img.danawa.com/new/noData/img/noImg_160.gif",
+      "spec": "M.2 (2280) / PCIe4.0x4 (64GT/s) / QLC / 컨트롤러 / WD Polaris 3 / 순차읽기 / 7,100MB/s / 순차쓰기 / 6,700MB/s / S.M.A.R.T"
+    }
+  ],
+  "meta": {
+    "extraction": "danawa-search-html",
+    "ts": 1791876759
+  }
+}

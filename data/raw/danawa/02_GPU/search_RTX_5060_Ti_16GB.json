@@ -1,0 +1,111 @@
+{
+  "query": "RTX 5060 Ti 16GB",
+  "source_url": "https://search.danawa.com/dsearch.php?query=RTX%205060%20Ti%2016GB",
+  "count": 10,
+  "items": [
+    {
+      "pcode": "101725832",
+      "title": "COLORFUL 지포스 RTX 5060 Ti GAMING DUO D7 16GB 피씨디렉트",
+      "price": 1044000,
+      "price_text": "1,044,000원",
+      "mall_text": "",
+      "url": "https://prod.danawa.com/info/?pcode=101725832&keyword=RTX+5060+Ti+16GB&cate=112753",
+      "image_url": "https://img.danuri.io/catalog-image/832/725/101/7ed5f8c55f7c43389a6b87be4016d316.jpg",
+      "spec": "RTX 5060 Ti / PCIe5.0x16(at x8) / 600W 이상 / 전원 포트 / 8핀 x1 / 가로(길이) / 200mm / 부스트클럭 / 2572MHz / VRAM 대역폭"
+    },
+    {
+      "pcode": "124197959",
+      "title": "GIGABYTE AORUS 지포스 RTX 5060 Ti AI BOX D7 16GB 제이씨현",
+      "price": 1779000,
+      "price_text": "1,779,000원",
+      "mall_text": "",
+      "url": "https://prod.danawa.com/info/?pcode=124197959&keyword=RTX+5060+Ti+16GB&cate=112753",
+      "image_url": "https://img.danuri.io/catalog-image/959/197/124/441603a2c0414b11a1c116933f3ee1de.jpeg",
+      "spec": "RTX 5060 Ti / 전원 포트 / 가로(길이) / 243.7mm / 부스트클럭 / 2572MHz / VRAM 대역폭 / HDMI2.1 / DP1.4 / USB3.x 5Gbps"
+    },
+    {
+      "pcode": "93704792",
+      "title": "GIGABYTE 지포스 RTX 5060 Ti WINDFORCE MAX OC D7 16GB 피씨디렉트",
+      "price": 1612420,
+      "price_text": "1,612,420원",
+      "mall_text": "",
+      "url": "https://prod.danawa.com/info/?pcode=93704792&keyword=RTX+5060+Ti+16GB&cate=112753",
+      "image_url": "https://img.danuri.io/catalog-image/792/704/093/d4611b8152e240d9aca448ee3d19fa52.jpg",
+      "spec": "RTX 5060 Ti / PCIe5.0x16(at x8) / 650W 이상 / 전원 포트 / 8핀 x1 / 가로(길이) / 208mm / 부스트클럭 / 2587MHz / VRAM 대역폭"
+    },
+    {
+      "pcode": "96366407",
+      "title": "PALIT 지포스 RTX 5060 Ti WHITE OC D7 16GB 이엠텍",
+      "price": 1097010,
+      "price_text": "1,097,010원",
+      "mall_text": "",
+      "url": "https://prod.danawa.com/info/?pcode=96366407&keyword=RTX+5060+Ti+16GB&cate=112753",
+      "image_url": "https://img.danuri.io/catalog-image/407/366/096/86d1e74c8c314f61b1fcf16341ee435b.jpg",
+      "spec": "RTX 5060 Ti / PCIe5.0x16(at x8) / 600W 이상 / 전원 포트 / 8핀 x1 / 가로(길이) / 262.1mm / 부스트클럭 / 2602MHz / VRAM 대역폭"
+    },
+    {
+      "pcode": "81990338",
+      "title": "MSI 지포스 RTX 5060 Ti 벤투스 2X OC 플러스 D7 16GB",
+      "price": 1142770,
+      "price_text": "1,142,770원",
+      "mall_text": "",
+      "url": "https://prod.danawa.com/info/?pcode=81990338&keyword=RTX+5060+Ti+16GB&cate=112753",
+      "image_url": "https://img.danawa.com/new/noData/img/noImg_160.gif",
+      "spec": "RTX 5060 Ti / PCIe5.0x16(at x8) / 600W 이상 / 전원 포트 / 8핀 x1 / 가로(길이) / 227mm / 부스트클럭 / 2602MHz / OC클럭"
+    },
+    {
+      "pcode": "96259577",
+      "title": "MSI 지포스 RTX 5060 Ti 쉐도우 2X OC 플러스 D7 16GB",
+      "price": 1142770,
+      "price_text": "1,142,770원",
+      "mall_text": "",
+      "url": "https://prod.danawa.com/info/?pcode=96259577&keyword=RTX+5060+Ti+16GB&cate=112753",
+      "image_url": "https://img.danawa.com/new/noData/img/noImg_160.gif",
+      "spec": "RTX 5060 Ti / PCIe5.0x16(at x8) / 600W 이상 / 전원 포트 / 8핀 x1 / 가로(길이) / 226mm / 부스트클럭 / 2602MHz / OC클럭"
+    },
+    {
+      "pcode": "122726797",
+      "title": "ASUS DUAL 지포스 RTX 5060 Ti OC D7 16GB 코잇",
+      "price": 1353990,
+      "price_text": "1,353,990원",
+      "mall_text": "",
+      "url": "https://prod.danawa.com/info/?pcode=122726797&keyword=RTX+5060+Ti+16GB&cate=112753",
+      "image_url": "https://img.danawa.com/new/noData/img/noImg_160.gif",
+      "spec": "RTX 5060 Ti / PCIe5.0x16(at x8) / 550W 이상 / 전원 포트 / 8핀 x1 / 가로(길이) / 229mm / 부스트클럭 / 2602MHz / OC클럭"
+    },
+    {
+      "pcode": "123802191",
+      "title": "COLORFUL 지포스 RTX 5060 Ti GAMING DUO V2 D7 16GB 피씨디렉트",
+      "price": 1068990,
+      "price_text": "1,068,990원",
+      "mall_text": "",
+      "url": "https://prod.danawa.com/info/?pcode=123802191&keyword=RTX+5060+Ti+16GB&cate=112753",
+      "image_url": "https://img.danawa.com/new/noData/img/noImg_160.gif",
+      "spec": "RTX 5060 Ti / PCIe5.0x16(at x8) / 600W 이상 / 전원 포트 / 8핀 x1 / 가로(길이) / 200mm / 부스트클럭 / 2572MHz / VRAM 대역폭"
+    },
+    {
+      "pcode": "88233542",
+      "title": "COLORFUL iGame 지포스 RTX 5060 Ti ULTRA DUO OC White D7 16GB 피씨디렉트",
+      "price": 1089000,
+      "price_text": "1,089,000원",
+      "mall_text": "",
+      "url": "https://prod.danawa.com/info/?pcode=88233542&keyword=RTX+5060+Ti+16GB&cate=112753",
+      "image_url": "https://img.danawa.com/new/noData/img/noImg_160.gif",
+      "spec": "RTX 5060 Ti / PCIe5.0x16(at x8) / 600W 이상 / 전원 포트 / 8핀 x1 / 가로(길이) / 231mm / 부스트클럭 / 2572MHz / OC클럭"
+    },
+    {
+      "pcode": "81715985",
+      "title": "GIGABYTE 지포스 RTX 5060 Ti WINDFORCE OC D7 16GB 피씨디렉트",
+      "price": 1253370,
+      "price_text": "1,253,370원",
+      "mall_text": "",
+      "url": "https://prod.danawa.com/info/?pcode=81715985&keyword=RTX+5060+Ti+16GB&cate=112753",
+      "image_url": "https://img.danawa.com/new/noData/img/noImg_160.gif",
+      "spec": "RTX 5060 Ti / PCIe5.0x16(at x8) / 650W 이상 / 전원 포트 / 8핀 x1 / 가로(길이) / 208mm / 부스트클럭 / 2587MHz / VRAM 대역폭"
+    }
+  ],
+  "meta": {
+    "extraction": "danawa-search-html",
+    "ts": 1791877260
+  }
+}

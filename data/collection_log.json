@@ -1,0 +1,53 @@
+{
+  "started": "2026-10-13T18:19:46",
+  "finished": "2026-10-13T18:21:11",
+  "collected_at": "2026-10-13T18:21:11",
+  "source_status": {
+    "naver": false,
+    "coupang": false,
+    "naver_detail": "Naver Search API responded with 404.",
+    "coupang_detail": "upstream 403"
+  },
+  "queries": {
+    "01_CPU": [
+      "라이젠5 9600X 정품",
+      "라이젠7 9700X 정품",
+      "라이젠7 7800X3D 정품",
+      "라이젠7 9800X3D 정품",
+      "인텔 코어i5 14400F 정품",
+      "인텔 코어 울트라5 225F"
+    ],
+    "02_GPU": [
+      "RTX 5060 Ti 16GB",
+      "RTX 5070 12GB",
+      "RX 9070 XT",
+      "RTX 5070 Ti"
+    ],
+    "03_메인보드": [
+      "B650M 메인보드",
+      "B850M",
+      "B760M 메인보드 DDR5",
+      "B860M 메인보드"
+    ],
+    "04_RAM": [
+      "DDR5 6000 32GB",
+      "DDR5 16GB 5600"
+    ],
+    "05_SSD": [
+      "NVMe SSD 1TB Gen4",
+      "NVMe SSD 2TB Gen4"
+    ],
+    "06_파워": [
+      "750W 골드 풀모듈러",
+      "850W 골드 풀모듈러"
+    ],
+    "07_쿨러": [
+      "CPU 공랭 쿨러 듀얼타워",
+      "CPU 공랭 쿨러 싱글타워"
+    ],
+    "08_케이스": [
+      "미들타워 PC 케이스 강화유리"
+    ]
+  },
+  "rows": 91
+}

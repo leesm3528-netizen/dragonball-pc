@@ -1,0 +1,111 @@
+{
+  "query": "CPU 공랭 쿨러 싱글타워",
+  "source_url": "https://search.danawa.com/dsearch.php?query=CPU%20%EA%B3%B5%EB%9E%AD%20%EC%BF%A8%EB%9F%AC%20%EC%8B%B1%EA%B8%80%ED%83%80%EC%9B%8C",
+  "count": 10,
+  "items": [
+    {
+      "pcode": "14110475",
+      "title": "PCCOOLER PALADIN 400",
+      "price": 24900,
+      "price_text": "24,900원",
+      "mall_text": "1위 블랙",
+      "url": "https://prod.danawa.com/info/?pcode=14110475&keyword=CPU+%EA%B3%B5%EB%9E%AD+%EC%BF%A8%EB%9F%AC+%EC%8B%B1%EA%B8%80%ED%83%80%EC%9B%8C&cate=11236855",
+      "image_url": "https://img.danuri.io/catalog-image/475/110/014/a271efe903464604bbe0bb2e66b695f8.jpg",
+      "spec": "CPU 쿨러 / 공랭 / 팬 쿨러 / TDP / 235W / 높이 / 157mm / 팬 크기 / 130mm / 25T"
+    },
+    {
+      "pcode": "106047347",
+      "title": "DEEPCOOL AG400 G2",
+      "price": 21640,
+      "price_text": "21,640원",
+      "mall_text": "1위 블랙",
+      "url": "https://prod.danawa.com/info/?pcode=106047347&keyword=CPU+%EA%B3%B5%EB%9E%AD+%EC%BF%A8%EB%9F%AC+%EC%8B%B1%EA%B8%80%ED%83%80%EC%9B%8C&cate=11236855",
+      "image_url": "https://img.danuri.io/catalog-image/347/047/106/716ba88a085542d1a1e93c62a9fcf88f.jpeg",
+      "spec": "CPU 쿨러 / 공랭 / 팬 쿨러 / TDP / 230W / 높이 / 154.5mm / 팬 크기 / 120mm / 25T"
+    },
+    {
+      "pcode": "123695792",
+      "title": "쿨러마스터 V8 ACE 3DHP INTEL Optimized",
+      "price": 152770,
+      "price_text": "152,770원",
+      "mall_text": "블랙",
+      "url": "https://prod.danawa.com/info/?pcode=123695792&keyword=CPU+%EA%B3%B5%EB%9E%AD+%EC%BF%A8%EB%9F%AC+%EC%8B%B1%EA%B8%80%ED%83%80%EC%9B%8C&cate=11236855",
+      "image_url": "https://img.danuri.io/catalog-image/792/695/123/5bf5066456e347e994f8b9bbd7aa8b2a.jpeg",
+      "spec": "CPU 쿨러 / 공랭 / 팬 쿨러 / TDP / 300W / 높이 / 167.3mm / 팬 크기 / 120mm / 30T"
+    },
+    {
+      "pcode": "16209023",
+      "title": "Thermalright Assassin X 120 Refined SE ARGB 서린",
+      "price": 21890,
+      "price_text": "21,890원",
+      "mall_text": "",
+      "url": "https://prod.danawa.com/info/?pcode=16209023&keyword=CPU+%EA%B3%B5%EB%9E%AD+%EC%BF%A8%EB%9F%AC+%EC%8B%B1%EA%B8%80%ED%83%80%EC%9B%8C&cate=11236855",
+      "image_url": "https://img.danuri.io/catalog-image/023/209/016/d137d028b9194e54a39c3dfb7529d712.jpg",
+      "spec": "CPU 쿨러 / 공랭 / 팬 쿨러 / 높이 / 148mm / 팬 크기 / 120mm / 25T / 3-4핀 / 베어링"
+    },
+    {
+      "pcode": "94523459",
+      "title": "잘만 ZET 5 솔더링",
+      "price": 77990,
+      "price_text": "77,990원",
+      "mall_text": "2위 블랙",
+      "url": "https://prod.danawa.com/info/?pcode=94523459&keyword=CPU+%EA%B3%B5%EB%9E%AD+%EC%BF%A8%EB%9F%AC+%EC%8B%B1%EA%B8%80%ED%83%80%EC%9B%8C&cate=11236855",
+      "image_url": "https://img.danawa.com/new/noData/img/noImg_160.gif",
+      "spec": "CPU 쿨러 / 공랭 / 팬 쿨러 / TDP / 220W / 높이 / 158mm / 3-4핀 / 베어링 / Hydro(유체)"
+    },
+    {
+      "pcode": "124166491",
+      "title": "DEEPCOOL AK700 VC",
+      "price": 96860,
+      "price_text": "96,860원",
+      "mall_text": "1위 블랙",
+      "url": "https://prod.danawa.com/info/?pcode=124166491&keyword=CPU+%EA%B3%B5%EB%9E%AD+%EC%BF%A8%EB%9F%AC+%EC%8B%B1%EA%B8%80%ED%83%80%EC%9B%8C&cate=11236855",
+      "image_url": "https://img.danawa.com/new/noData/img/noImg_160.gif",
+      "spec": "CPU 쿨러 / 공랭 / 팬 쿨러 / TDP / 300W / 높이 / 157mm / 팬 크기 / 120mm / 25T"
+    },
+    {
+      "pcode": "16208849",
+      "title": "Thermalright Assassin X 120 Refined SE 서린",
+      "price": 21590,
+      "price_text": "21,590원",
+      "mall_text": "1위 블랙",
+      "url": "https://prod.danawa.com/info/?pcode=16208849&keyword=CPU+%EA%B3%B5%EB%9E%AD+%EC%BF%A8%EB%9F%AC+%EC%8B%B1%EA%B8%80%ED%83%80%EC%9B%8C&cate=11236855",
+      "image_url": "https://img.danawa.com/new/noData/img/noImg_160.gif",
+      "spec": "CPU 쿨러 / 공랭 / 팬 쿨러 / 높이 / 148mm / 팬 크기 / 120mm / 25T / 4핀 / 베어링"
+    },
+    {
+      "pcode": "100193501",
+      "title": "쿨러마스터 V4 Alpha 3DHP",
+      "price": 37380,
+      "price_text": "37,380원",
+      "mall_text": "블랙",
+      "url": "https://prod.danawa.com/info/?pcode=100193501&keyword=CPU+%EA%B3%B5%EB%9E%AD+%EC%BF%A8%EB%9F%AC+%EC%8B%B1%EA%B8%80%ED%83%80%EC%9B%8C&cate=11236855",
+      "image_url": "https://img.danawa.com/new/noData/img/noImg_160.gif",
+      "spec": "CPU 쿨러 / 공랭 / 팬 쿨러 / TDP / 240W / 높이 / 161mm / 팬 크기 / 120mm / 25T"
+    },
+    {
+      "pcode": "103237559",
+      "title": "PCCOOLER CPS RT400 TCL FULL ARGB",
+      "price": 27880,
+      "price_text": "27,880원",
+      "mall_text": "2위 블랙",
+      "url": "https://prod.danawa.com/info/?pcode=103237559&keyword=CPU+%EA%B3%B5%EB%9E%AD+%EC%BF%A8%EB%9F%AC+%EC%8B%B1%EA%B8%80%ED%83%80%EC%9B%8C&cate=11236855",
+      "image_url": "https://img.danawa.com/new/noData/img/noImg_160.gif",
+      "spec": "CPU 쿨러 / 공랭 / 팬 쿨러 / TDP / 235W / 높이 / 152mm / 팬 크기 / 120mm / 25T"
+    },
+    {
+      "pcode": "122675452",
+      "title": "darkFlash ELLSWORTH S31 CORE RGB",
+      "price": 17500,
+      "price_text": "17,500원",
+      "mall_text": "2위 블랙",
+      "url": "https://prod.danawa.com/info/?pcode=122675452&keyword=CPU+%EA%B3%B5%EB%9E%AD+%EC%BF%A8%EB%9F%AC+%EC%8B%B1%EA%B8%80%ED%83%80%EC%9B%8C&cate=11236855",
+      "image_url": "https://img.danawa.com/new/noData/img/noImg_160.gif",
+      "spec": "CPU 쿨러 / 공랭 / 팬 쿨러 / TDP / 220W / 높이 / 152mm / 팬 크기 / 120mm / 25T"
+    }
+  ],
+  "meta": {
+    "extraction": "danawa-search-html",
+    "ts": 1791876935
+  }
+}

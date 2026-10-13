@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>드래곤볼 PC 연구소</title>
+  <meta name="description" content="다나와 최저가로 예산 안에서 성능이 가장 높은 PC 부품 조합(드래곤볼)을 찾아 줍니다.">
+  <meta name="color-scheme" content="light dark">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%23f59e0b'/%3E%3Cpath d='M16 8l2.2 5.2 5.6.4-4.3 3.6 1.4 5.5L16 19.8l-4.9 2.9 1.4-5.5-4.3-3.6 5.6-.4z' fill='%23b91c1c'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+  <script src="vendor/marked.min.js" defer></script>
+  <script src="vendor/purify.min.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">본문으로 건너뛰기</a>
+<header class="top">
+  <div class="brand">
+    <span class="logo" aria-hidden="true">★</span>
+    <div>
+      <h1>드래곤볼 PC 연구소</h1>
+      <p class="sub">드래곤볼 = 예산 안에서 성능이 가장 높은 부품 꿀조합</p>
+    </div>
+  </div>
+  <div class="top-right">
+    <div id="status" class="status" aria-live="polite"></div>
+    <button type="button" id="lock-btn" class="small ghost" hidden>🔒 접근 코드 입력</button>
+  </div>
+</header>
+
+<nav class="tabs" role="tablist" aria-label="메뉴">
+  <button type="button" class="tab" role="tab" id="tabbtn-builder" data-tab="builder" aria-controls="tab-builder" aria-selected="false">드래곤볼 빌더</button>
+  <button type="button" class="tab" role="tab" id="tabbtn-parts" data-tab="parts" aria-controls="tab-parts" aria-selected="false" tabindex="-1">부품 가격표</button>
+  <button type="button" class="tab" role="tab" id="tabbtn-research" data-tab="research" aria-controls="tab-research" aria-selected="false" tabindex="-1">웹 리서치 <span class="lock-ico" aria-hidden="true">🔒</span></button>
+  <button type="button" class="tab" role="tab" id="tabbtn-youtube" data-tab="youtube" aria-controls="tab-youtube" aria-selected="false" tabindex="-1">유튜브 리뷰 <span class="lock-ico" aria-hidden="true">🔒</span></button>
+</nav>
+
+<main id="main">
+  <!-- 드래곤볼 빌더 -->
+  <section id="tab-builder" class="panel" role="tabpanel" aria-labelledby="tabbtn-builder">
+    <div class="card intro" id="intro">
+      <div class="row between">
+        <h2>처음 오셨나요? 3단계면 끝나요</h2>
+        <button type="button" class="small ghost" id="intro-close">다시 보지 않기</button>
+      </div>
+      <ol class="steps">
+        <li><b>예산 입력</b> — 금액을 넣거나 아래 버튼(150만~400만원)을 누르세요.</li>
+        <li><b>꿀조합 담기</b> — 다나와 최저가로 계산한 조합 중 마음에 드는 것을 ‘이 조합 담기’.</li>
+        <li><b>링크·견적 복사</b> — ‘내 조합’에서 공유 링크나 견적서를 복사해 보내세요.</li>
+      </ol>
+      <button type="button" id="intro-go">250만원 드래곤볼 바로 보기</button>
+    </div>
+
+    <div class="card" id="auto-card">
+      <h2>예산으로 자동 추천</h2>
+      <form id="auto-form" class="form-grid" novalidate>
+        <div class="field">
+          <label for="budget">예산 (원)</label>
+          <input id="budget" type="number" inputmode="numeric" step="10000" min="0" value="2500000" required>
+        </div>
+        <div class="field">
+          <label for="storage">저장장치</label>
+          <select id="storage"><option value="1TB">1TB</option><option value="2TB">2TB</option></select>
+        </div>
+        <div class="field">
+          <label for="purpose">용도</label>
+          <select id="purpose">
+            <option value="qhd">게이밍 (QHD)</option><option value="fhd">게이밍 (FHD 고주사율)</option>
+            <option value="stream">게이밍 + 방송</option><option value="work">작업용 (영상편집/AI)</option>
+          </select>
+        </div>
+        <div class="field end"><button type="submit">꿀조합 찾기</button></div>
+      </form>
+      <div class="presets" id="budget-presets" role="group" aria-label="예산 빠른 선택"></div>
+      <label class="toggle"><input type="checkbox" data-cash-toggle> 현금·계좌이체 등 조건부 최저가도 쓰기</label>
+      <p class="hint">기본은 <b>일반결제 최저가</b>(배송비 포함)입니다. 일반결제 판매처가 없는 부품은 다나와 표시가를 쓰고 ‘표시가’ 태그를 붙입니다. 용도에 따라 CPU·GPU 비중이 달라지고(FHD 고주사율·방송·작업용은 CPU 비중↑, 작업용은 코어 수·VRAM 가산), 예산 안에서 성능 지수가 가장 높은 조합을 고릅니다. <span id="min-hint"></span> <span data-fresh></span></p>
+      <div id="auto-out" aria-live="polite"></div>
+    </div>
+
+    <div class="card" id="build-card">
+      <div class="row between">
+        <h2>내 조합</h2>
+        <span data-fresh></span>
+      </div>
+      <div id="build-table"></div>
+      <div id="compat" aria-live="polite"></div>
+      <div class="build-actions" role="group" aria-label="내 조합 동작">
+        <span id="sticky-total" class="sticky-total" aria-live="polite"></span>
+        <div class="row wrap">
+          <button type="button" id="share-link" class="ghost" data-need-build disabled>링크 복사</button>
+          <button type="button" id="copy-quote" class="ghost" data-need-build disabled>견적서 복사</button>
+          <button type="button" id="advise-btn" class="ghost" data-need-build disabled>AI 조합 평가 <span class="lock-ico" aria-hidden="true">🔒</span></button>
+          <button type="button" id="clear-build" class="ghost danger" data-need-build disabled>비우기</button>
+        </div>
+      </div>
+      <div id="share-out"></div>
+      <div id="advise-out" class="md" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <!-- 부품 가격표 -->
+  <section id="tab-parts" class="panel" role="tabpanel" aria-labelledby="tabbtn-parts" hidden>
+    <div class="toolbar">
+      <div class="chips" id="cat-chips" role="group" aria-label="부품 분류"></div>
+    </div>
+    <div class="toolbar">
+      <div class="field inline grow">
+        <label for="parts-filter">이름 검색</label>
+        <input id="parts-filter" type="search" placeholder="예: MSI, 5070, 화이트" autocomplete="off">
+      </div>
+      <div class="field inline">
+        <label for="parts-sort">정렬</label>
+        <select id="parts-sort">
+          <option value="query">검색어별</option><option value="asc">가격 낮은 순</option>
+          <option value="desc">가격 높은 순</option><option value="name">이름 순</option>
+        </select>
+      </div>
+      <label class="toggle"><input type="checkbox" id="model-min"> 모델별 최저가만</label>
+      <label class="toggle"><input type="checkbox" data-cash-toggle id="cash-toggle"> 조건부(현금) 최저가 포함</label>
+    </div>
+    <p class="hint" id="parts-meta"></p>
+    <div class="table-wrap"><table id="parts-table" class="stack"></table></div>
+
+    <div class="card">
+      <h2>다나와 실시간 검색 <span class="lock-ico" aria-hidden="true">🔒</span></h2>
+      <p class="hint">가격표에 없는 부품을 지금 다나와에서 찾아 담을 수 있습니다.</p>
+      <form id="live-form" class="row" novalidate>
+        <label for="live-q" class="sr-only">다나와 검색어</label>
+        <input id="live-q" type="search" placeholder="예: RTX 5060 Ti 16GB, 라이젠5 9600X, B650M" minlength="2" maxlength="60" required>
+        <button type="submit">검색</button>
+      </form>
+      <div id="live-out" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <!-- 웹 리서치 -->
+  <section id="tab-research" class="panel" role="tabpanel" aria-labelledby="tabbtn-research" hidden>
+    <div class="card">
+      <h2>웹 리서치 <span class="lock-ico" aria-hidden="true">🔒</span></h2>
+      <p class="hint">벤치마크·비교 글을 찾아 AI가 출처 번호를 붙여 요약합니다.</p>
+      <form id="research-form" class="row wrap" novalidate>
+        <label for="research-q" class="sr-only">조사할 내용</label>
+        <input id="research-q" type="search" placeholder="예: RTX 5070 vs RX 9070 XT 벤치마크" minlength="2" maxlength="100" required>
+        <label class="toggle"><input type="checkbox" id="research-sum" checked> AI 요약</label>
+        <button type="submit">조사</button>
+      </form>
+      <div class="presets" id="research-presets" role="group" aria-label="추천 검색어"></div>
+      <div id="research-out" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <!-- 유튜브 -->
+  <section id="tab-youtube" class="panel" role="tabpanel" aria-labelledby="tabbtn-youtube" hidden>
+    <div class="card">
+      <h2>유튜브 리뷰 <span class="lock-ico" aria-hidden="true">🔒</span></h2>
+      <p class="hint">리뷰 영상을 찾고, AI가 영상을 직접 보고 요약합니다.</p>
+      <form id="yt-form" class="row" novalidate>
+        <label for="yt-q" class="sr-only">유튜브 검색어</label>
+        <input id="yt-q" type="search" placeholder="예: RTX 5070 리뷰, 9800X3D 벤치" minlength="2" maxlength="60" required>
+        <button type="submit">영상 찾기</button>
+      </form>
+      <form id="yt-url-form" class="row" novalidate>
+        <label for="yt-url" class="sr-only">유튜브 영상 주소</label>
+        <input id="yt-url" type="url" inputmode="url" placeholder="또는 유튜브 영상 주소 붙여넣기" maxlength="200">
+        <button type="submit" class="ghost">바로 요약</button>
+      </form>
+      <div id="yt-out" aria-live="polite"></div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <p>가격은 <b>조회 시점 다나와 기준</b>이며 바뀔 수 있습니다. 구매 전 판매처에서 다시 확인하세요. 회원 쿠폰·옵션 추가금은 반영되지 않았습니다. 성능 지수는 대략적인 게이밍 티어 값입니다.</p>
+  <p>🔒 표시 기능(실시간 검색·AI 요약·웹/유튜브 조사)은 사이트 주인의 API를 쓰므로 접근 코드가 필요할 수 있습니다. 가격표와 빌더는 누구나 쓸 수 있습니다.</p>
+  <p class="credits">가격 데이터: 다나와 공개 가격비교 · 수집 도구: k-skill (NomaDamas, MIT) · 웹 조사: Firecrawl · AI 요약: Google Gemini</p>
+</footer>
+
+<div id="lock-modal" class="modal" hidden>
+  <form id="lock-form" class="modal-card" role="dialog" aria-modal="true" aria-labelledby="lock-title" aria-describedby="lock-desc" novalidate>
+    <h2 id="lock-title">🔒 접근 코드</h2>
+    <p id="lock-desc" class="hint">다나와 실시간 검색·쇼핑몰별 가격, AI 요약·조합 평가, 웹·유튜브 조사는 사이트 주인의 API 키를 쓰기 때문에 접근 코드가 필요합니다. 가격표와 빌더는 코드 없이 쓸 수 있습니다.</p>
+    <label for="lock-code" class="block">접근 코드</label>
+    <input id="lock-code" type="password" autocomplete="current-password" maxlength="200" required>
+    <label class="toggle"><input type="checkbox" id="lock-remember" checked> 이 기기에 기억하기</label>
+    <div id="lock-msg" class="lock-msg" role="alert"></div>
+    <div class="row wrap">
+      <button type="submit" id="lock-submit">확인</button>
+      <button type="button" class="ghost" id="lock-cancel">취소</button>
+      <button type="button" class="ghost danger" id="lock-forget" hidden>저장된 코드 지우기</button>
+    </div>
+  </form>
+</div>
+
+<div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+<noscript><p class="foot">이 사이트는 자바스크립트가 필요합니다.</p></noscript>
+</body>
+</html>

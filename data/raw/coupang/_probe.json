@@ -1,0 +1,20 @@
+{
+  "items": [],
+  "query": {
+    "keyword": "RTX 5070",
+    "limit": 3,
+    "sub_id": "k-skill"
+  },
+  "upstream": {
+    "provider": "coupang-partners-api",
+    "response_code": "403"
+  },
+  "proxy": {
+    "name": "k-skill-proxy",
+    "cache": {
+      "hit": false,
+      "ttl_ms": 300000
+    },
+    "requested_at": "2026-10-13T09:19:47.723Z"
+  }
+}

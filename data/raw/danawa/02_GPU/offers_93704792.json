@@ -1,0 +1,44 @@
+{
+  "pcode": "93704792",
+  "title": "GIGABYTE 지포스 RTX 5060 Ti WINDFORCE MAX OC D7 16GB 피씨디렉트",
+  "source_url": "https://prod.danawa.com/info/?pcode=93704792",
+  "count": 1,
+  "normal_count": 1,
+  "conditional_count": 0,
+  "offers": [
+    {
+      "mall": "G마켓",
+      "price": 1612420,
+      "price_text": "1,612,420원",
+      "shipping": "(배송비 3,000원)",
+      "is_free_shipping": false,
+      "shipping_fee": 3000,
+      "total_price": 1615420,
+      "total_price_text": "1,615,420원",
+      "card_price": null,
+      "card_price_text": null,
+      "card_name": null,
+      "card_discount": null,
+      "card_discount_text": null,
+      "installment": "무이자 최대 24 개월",
+      "installment_detail": "*결제 금액에 따라 무이자 혜택이 다르니, 상품 구매 전 반드시 확인하세요. 롯데24/KB국민14/삼성12/하나12/우리7/비씨6/전북6/광주6/수협6/제주6/농협4/신한3/현대3",
+      "payment_badges": [],
+      "cash_only": false,
+      "point_only": false,
+      "coupon_only": false,
+      "card_only_badge": false,
+      "discount_badge": false,
+      "membership_badge": false,
+      "payment_condition_types": [],
+      "payment_condition_label": null,
+      "is_conditional_price": false,
+      "url": "https://prod.danawa.com/bridge/loadingBridge.html?cate1=861&cate2=876&cate3=972&cate4=0&pcode=93704792&cmpnyc=EE128&safe_trade=4&fee_type=T&link_pcode=4472245887&package=0&setpc=0&r=17918772998382"
+    }
+  ],
+  "meta": {
+    "extraction": "danawa-price-ajax",
+    "include_shipping": false,
+    "sort": "total_price",
+    "ts": 1791877300
+  }
+}
