@@ -1,114 +1,120 @@
-# 드래곤볼 PC 연구소
+# 🐉 드래곤볼 PC 연구소
 
-배포 주소: https://dragonball-pc.vercel.app — 가격표와 빌더는 누구나 볼 수 있고, AI·웹 조사 기능은 접근 코드(`shoppingMall/.env`의 `SITE_ACCESS_CODE`)가 있어야 쓸 수 있습니다.
+> 새 컴퓨터를 맞출 때 **부품 최저가를 모으고**, 예산 안에서 **가성비 꿀조합("드래곤볼")을 자동으로 찾아 주는** 웹사이트입니다.
+> AI 코딩 도우미(Claude Code)와 하루 동안 대화하며 만들었고, 그 과정을 학습용으로 정리했습니다.
 
-새 컴퓨터 조립용 부품 최저가 조사와 가성비 꿀조합("드래곤볼")을 찾는 사이트입니다. 로컬에서 실행할 수 있고, Vercel(Hobby, 서울 리전 `icn1`)에 배포할 수 있습니다.
+**🔗 배포 주소: https://dragonball-pc.vercel.app**
 
-## 폴더 구조
+| 누구나 쓸 수 있는 기능 | 접근 코드가 필요한 기능 🔒 |
+|---|---|
+| 부품 가격표 (다나와 91개 부품) | 웹 리서치 + AI 요약 |
+| 드래곤볼 빌더 (예산별 추천, 호환성 검사) | 유튜브 리뷰 검색 + 영상 요약 |
+| 조합 공유 링크, 견적서 복사 | AI 조합 평가 |
+
+🔒 기능은 유료 API(Gemini, Firecrawl)를 쓰기 때문에 접근 코드로 잠가 두었습니다.
+
+---
+
+## 📚 이 저장소로 배울 수 있는 것
+
+1. **AI 스킬 활용**: 이미 만들어진 도구(k-skill 다나와 검색)를 가져와 내 프로젝트에 붙이기
+2. **데이터 수집과 정리**: 검색 → 원본 저장 → CSV/JSON 정리 흐름
+3. **웹사이트 만들기**: 프레임워크 없이 HTML·CSS·JavaScript만으로 만든 화면
+4. **외부 API 연결**: Firecrawl(웹 검색), Google Gemini(AI 요약)
+5. **API 키 지키기**: `.env` 파일, 접근 코드, 요청 횟수 제한
+6. **배포하기**: GitHub에 올리고 Vercel로 인터넷 주소 만들기
+7. **문제 해결**: 오늘 실제로 막혔던 문제와 그 해결 과정
+
+## 🗺️ 학습 문서 (순서대로 읽으세요)
+
+| 순서 | 문서 | 내용 |
+|---|---|---|
+| 1 | [오늘의 작업 기록](docs/01-작업기록.md) | 어떤 요청을 했고, 무엇이 만들어졌는지 시간순으로 |
+| 2 | [동작 원리](docs/02-동작원리.md) | 데이터가 어디서 와서 화면까지 가는지, 코드 읽는 순서 |
+| 3 | [문제 해결 노트](docs/03-문제해결노트.md) | 실제로 겪은 오류 10가지와 해결법 |
+| 4 | [직접 따라 하기](docs/04-따라하기.md) | 내 컴퓨터에서 실행하고 내 계정으로 배포하기 |
+| 부록 | [기술 레퍼런스](docs/REFERENCE.md) | 환경 변수, API 목록, 비용 보호 설정 |
+
+---
+
+## 🧩 한눈에 보는 구조
+
+```mermaid
+flowchart LR
+    subgraph PC["💻 내 PC"]
+        C["scripts/collect.py<br/>가격 수집기"]
+    end
+    D[("다나와")]
+    C -- "검색·가격 조회" --> D
+    C -- "parts.json 생성" --> G["GitHub 저장소"]
+    G -- "배포" --> V
+
+    subgraph V["☁️ Vercel (서울 리전)"]
+        S["public/<br/>화면 (HTML·JS)"]
+        A["api/index.py<br/>서버 함수"]
+    end
+
+    U["🙋 사용자 브라우저"] --> S
+    U -- "🔒 접근 코드" --> A
+    A --> F["Firecrawl<br/>웹·유튜브 검색"]
+    A --> M["Gemini<br/>AI 요약"]
+```
+
+- **가격 데이터**는 내 PC에서 미리 모아 `public/data/parts.json`으로 저장해 둡니다. (다나와가 Vercel 서버의 접속을 막기 때문)
+- **화면**은 이 JSON을 읽어 표와 추천 조합을 만듭니다. 추천 계산은 브라우저에서 합니다.
+- **AI 기능**만 서버 함수(`api/`)를 거칩니다. API 키는 서버에만 있고 브라우저로 보내지 않습니다.
+
+## 📁 폴더 지도
 
 ```
 pc-build/
-├─ public/                   # 정적 사이트 (Vercel outputDirectory)
-│  ├─ index.html, app.js, style.css, vendor/
-│  └─ data/parts.json        # 수집한 부품 가격 (collect.py가 생성)
-├─ api/
-│  ├─ index.py               # Vercel Python 함수 진입점 (모든 /api/* 처리)
-│  ├─ _core.py               # 공용 로직: 접근 코드, 요청 제한, 다나와·Firecrawl·Gemini 호출
-│  └─ _kskill_danawa.py      # k-skill 다나와 헬퍼 (MIT, LICENSES/k-skill-MIT.txt)
-├─ web/server.py             # 로컬 개발 서버 (public/ 제공 + /api/* 처리)
-├─ scripts/collect.py        # 다나와 부품 가격 수집기
-├─ data/
-│  ├─ collection_log.json    # 수집 시각, 소스 상태, 검색어 목록
-│  ├─ raw/danawa/<카테고리>/  # 검색·쇼핑몰 가격 원본 (search_*.json, offers_*.json)
-│  └─ processed/             # all_candidates.csv, 카테고리별 CSV (엑셀로 열림)
-├─ vercel.json, requirements.txt, .python-version
-└─ start-site.bat            # 더블클릭하면 로컬 사이트 실행
+├─ public/               👉 화면. 브라우저가 받는 파일
+│  ├─ index.html           탭 4개 (빌더 / 가격표 / 웹 리서치 / 유튜브)
+│  ├─ app.js               추천 계산, 표 그리기, API 호출
+│  ├─ style.css
+│  └─ data/parts.json      수집한 부품 가격 (collect.py가 만듦)
+├─ api/                  👉 서버. Vercel 함수로 실행
+│  ├─ index.py             입구 (모든 /api/* 요청이 여기로)
+│  ├─ _core.py             실제 로직: 접근 코드, 요청 제한, Firecrawl·Gemini 호출
+│  └─ _kskill_danawa.py    k-skill 다나와 검색 도우미 (MIT 라이선스)
+├─ scripts/collect.py    👉 다나와 가격 수집기 (내 PC에서 실행)
+├─ web/server.py         👉 내 PC용 개발 서버
+├─ data/                 👉 수집 원본(raw)과 엑셀용 CSV(processed)
+├─ docs/                 👉 학습 문서
+├─ .env.example          👉 API 키 입력 양식 (복사해서 .env로)
+├─ start-site.bat        👉 더블클릭하면 내 PC에서 사이트 실행
+└─ vercel.json           👉 배포 설정
 ```
 
-## 환경 변수
+## ⚡ 5분 만에 내 PC에서 실행하기
 
-로컬에서는 `shoppingMall/.env`(또는 `pc-build/.env`)에서 읽고, Vercel에서는 프로젝트 환경 변수로 넣습니다. `.env`는 저장소에 올리지 않습니다(`.gitignore`).
+필요한 것: Windows, Python 3.12 이상 (명령은 `pc-build` 폴더의 명령 프롬프트에서 입력) ([python.org](https://www.python.org/downloads/))
 
-| 키 | 용도 |
-|---|---|
-| `SITE_ACCESS_CODE` | 사이트 접근 코드. 다나와 실시간 조회와 AI 기능은 요청 헤더 `X-Access-Code`가 이 값과 같아야 동작합니다. **비어 있으면 해당 기능은 모두 잠깁니다.** 길고 무작위인 값을 쓰세요. |
-| `FIRECRAWL_API_KEY` | 웹 리서치, 유튜브 영상 검색 (firecrawl.dev) |
-| `GOOGLE_API_KEY` | Gemini 요약·조합 평가 (Google AI Studio) |
-| `GEMINI_MODEL` | 먼저 시도할 Gemini 모델 (기본 `gemini-flash-latest`) |
-| `GEMINI_FALLBACK_MODELS` | (선택) 다음으로 쓸 모델, 쉼표 구분. 기본 `gemini-flash-lite-latest,gemini-3.5-flash-lite,gemini-3.1-flash-lite` |
-| `AI_GLOBAL_PER_10MIN` | (선택) 모든 사용자 합산 AI·웹 검색 요청 한도, 10분당. 기본 120 |
-| `VIDEO_PER_DAY` | (선택) 모든 사용자 합산 유튜브 영상 요약 한도, 하루당(캐시 적중 제외). 기본 150 |
-| `DANAWA_LIVE` | (선택) `0`이면 다나와 실시간 조회를 끄고 화면에 안내를 띄웁니다. 배포판(Vercel)은 `0`으로 둡니다. 기본 켜짐 |
+```bat
+:: 1. 필요한 라이브러리 설치
+py -m pip install -r requirements.txt
 
-키는 서버에서만 쓰고 브라우저나 응답, 로그에 내보내지 않습니다. 값을 바꾼 뒤에는 로컬 서버를 재시작하거나 Vercel을 다시 배포하세요.
+:: 2. API 키 양식 복사 (AI 기능을 쓸 때만 키를 채우면 됩니다)
+copy .env.example .env
 
-## 로컬 실행
+:: 3. 실행 → 브라우저에서 http://127.0.0.1:8000
+py -X utf8 web/server.py
+```
 
-1. 의존성: `py -m pip install -r requirements.txt` (BeautifulSoup, 다나와 파싱용)
-2. 실행: `start-site.bat` 더블클릭, 또는 `py -X utf8 web/server.py` → http://127.0.0.1:8000 (`PORT`로 변경)
+또는 `start-site.bat`을 더블클릭하세요. 키가 없어도 **가격표와 빌더는 바로 동작**합니다.
+자세한 설명과 Vercel 배포 방법은 [직접 따라 하기](docs/04-따라하기.md)에 있습니다.
 
-로컬 서버는 127.0.0.1에만 열리고, 다른 사이트에서 보낸 요청은 거절합니다.
+## ⚠️ 알아 둘 한계
 
-## 데이터 갱신
+- 가격은 **수집한 시점(2026-10-13)** 다나와 기준입니다. 쿠폰·카드 할인은 반영하지 않습니다.
+- 배포판에서는 **다나와 실시간 검색이 꺼져** 있습니다. 다나와가 데이터센터 IP를 막기 때문이며, 우회하지 않았습니다. 실시간 검색은 내 PC 실행에서 됩니다.
+- 성능 점수는 대략적인 게이밍 등급 값입니다. 정확한 비교는 웹 리서치·유튜브 탭을 쓰세요.
+- 개인 조회용입니다. 대량 수집에 쓰지 마세요.
 
-- `py -X utf8 scripts/collect.py`: 이전에 받은 원본은 재사용하고 빈 항목만 다나와에서 새로 받습니다(예전 8개 상한으로 잘려 일반결제 오퍼가 없는 쇼핑몰 가격 원본도 다시 받음). 모두 새로 받으려면 `--fresh`.
-- `py -X utf8 scripts/collect.py --rebuild-only`: 네트워크 없이 `data/raw` 원본으로 CSV와 `public/data/parts.json`만 다시 만듭니다.
-- 결과가 비었거나 이전보다 절반 미만이면 기존 파일을 덮어쓰지 않고 실패(종료 코드 1)로 끝납니다.
-- 완제품 PC·노트북(제목에 조립PC/노트북 등, 스펙에 OS 표기)은 제외합니다. 검색어는 `collect.py`의 `QUERIES`에서 바꿉니다.
-- 갱신 후 `public/data/parts.json`을 커밋하면 배포 사이트에도 반영됩니다.
+## 🙏 사용한 것들
 
-## Vercel 배포
-
-- 저장소 루트 = `pc-build`. Framework Preset은 Other(`vercel.json`의 `framework: null`), 빌드 명령 없음, 출력 폴더 `public`.
-- `/api/*`는 리라이트로 `api/index.py` 하나가 처리합니다. 최대 실행 시간 300초, 리전 `icn1`.
-- Python 3.14(`.python-version`), 의존성은 `requirements.txt`(beautifulsoup4, soupsieve).
-- 환경 변수 4개(`SITE_ACCESS_CODE`, `FIRECRAWL_API_KEY`, `GOOGLE_API_KEY`, `GEMINI_MODEL`)를 Production(필요하면 Preview에도)에 넣고 다시 배포하세요.
-- 배포 후 `/api/status`가 `{"ok": true, "locked": true, ...}`를 돌려주는지 확인합니다.
-- 다나와는 Vercel(데이터센터) IP의 접속을 403으로 막습니다(2026-10-13 확인, 서울 리전 포함). 차단을 우회하지 않고, 배포판은 `DANAWA_LIVE=0`으로 실시간 조회를 끈 채 수집해 둔 가격표(`parts.json`)를 보여줍니다. 실시간 조회는 로컬 실행에서 씁니다.
-- 가격 갱신 흐름: 내 PC에서 `scripts/collect.py` 실행 → `public/data/parts.json` 커밋·푸시 → Vercel이 다시 배포(GitHub 연결 시 자동, 아니면 `vercel deploy --prod`).
-- GitHub 자동 배포를 쓰려면 Vercel GitHub 앱이 이 저장소에 접근할 수 있어야 합니다(github.com/settings/installations → Vercel → Repository access에 `dragonball-pc` 추가). 그다음 `vercel git connect`.
-
-## API
-
-모든 응답은 JSON입니다. 오류는 `{"error": "<한국어 메시지>", "code": "<코드>"}` 형식입니다.
-
-| 경로 | 설명 |
-|---|---|
-| `GET /api/status` | 공개. 잠금 여부와 기능 설정 상태 |
-| `POST /api/auth/check` | 접근 코드 확인 |
-| `GET /api/danawa/search?q=` | 다나와 실시간 검색 (2~60자) |
-| `GET /api/danawa/offers?pcode=` | 쇼핑몰별 가격 (숫자 상품 코드) |
-| `POST /api/research` | `{query, summarize}` 웹 검색 5건, 요약은 선택 |
-| `POST /api/page/summary` | `{url, question}` 웹 페이지(유튜브면 영상) 요약 |
-| `POST /api/youtube/search` | `{query}` 유튜브 리뷰 영상 검색 |
-| `POST /api/youtube/summary` | `{url}` 유튜브 영상 요약 (앞 20분 기준) |
-| `POST /api/build/advise` | `{purpose, budget, parts}` 조합 평가 |
-
-`/api/status`를 뺀 모든 경로는 `X-Access-Code` 헤더가 필요합니다(없거나 틀리면 401, 서버에 코드가 없으면 503). IP별 요청 제한(AI 기능 10분 30회, 다나와 10분 90회, IPv6는 /64 단위로 셈), 전체 합산 제한(AI 기능 10분 120회, 영상 요약 하루 150회), 초과 시 429, 본문 64KB 제한(413)이 있습니다. Gemini는 모델이 막히면 다음 모델로 넘어가며, 요청 하나당 약 4분 안에 끝냅니다.
-
-## 비용 보호 (꼭 설정하세요)
-
-코드 안의 요청 제한(IP별·전체 합산)은 Vercel 함수 인스턴스 메모리에 있어 **인스턴스마다 따로 셉니다.** 동시에 여러 인스턴스가 뜨거나 재시작되면 한도가 새로 시작되므로, 비용의 확실한 상한이 아닙니다. 실제 비용 방어는 코드 밖에서 하세요.
-
-- **Gemini**: Google Cloud Console(또는 AI Studio)에서 해당 API 키 프로젝트에 분당·일일 요청 할당량을 낮게 설정하고, 결제 계정에 예산 알림(가능하면 상한)을 겁니다.
-- **Firecrawl**: 요금제의 크레딧 한도를 확인하고, 자동 충전은 끄거나 상한을 둡니다.
-- **접근 코드 유출 시**: Vercel 프로젝트 환경 변수에서 `SITE_ACCESS_CODE`를 새 값으로 바꾸고 바로 다시 배포합니다. 이전 코드는 그 즉시 막힙니다.
-
-## 탭별 기능
-
-- **부품 가격표**: 수집한 다나와 가격. 일반결제 최저가와 현금·조건부 최저가를 따로 보여 주고, 실시간 검색과 쇼핑몰별 가격 조회도 됩니다.
-- **드래곤볼 빌더**: 예산 안에서 CPU×GPU 조합을 계산해 최고 성능 조합을 추천하고, 소켓·파워 용량 호환성을 검사하며, Gemini가 조합을 평가합니다.
-- **웹 리서치**: Firecrawl로 벤치마크·비교 글을 찾고 Gemini가 출처 번호를 붙여 요약합니다.
-- **유튜브 리뷰**: 리뷰 영상을 찾고 Gemini가 영상을 직접 보고 요약합니다.
-
-## 참고 / 한계
-
-- 가격은 수집 시점 다나와 공개 가격비교 기준이며, 회원 쿠폰·옵션 추가금은 반영되지 않습니다.
-- 성능 점수는 대략적인 게이밍 티어 값입니다(`app.js`). 정확한 수치는 웹 리서치나 유튜브 탭에서 확인하세요.
-- 캐시는 서버 인스턴스 메모리에만 있어 Vercel에서는 인스턴스마다 따로 둡니다.
-- k-skill의 네이버 쇼핑·쿠팡 프록시는 수집 시점에 오류(네이버 404, 쿠팡 403)라 데이터가 없습니다. 수집기는 실행할 때마다 상태를 확인하고, 복구되면 `data/raw/naver`, `data/raw/coupang`에 저장합니다.
-- 개인 조회 용도입니다. 요청 사이에 지연을 두며, 대량·고빈도 수집에는 쓰지 마세요.
-
-## 라이선스
-
-`api/_kskill_danawa.py`는 [k-skill](https://github.com/NomaDamas/k-skill)(NomaDamas, MIT)의 `danawa-price-search` 헬퍼를 가져와 조금 고친 것입니다. 전문은 `LICENSES/k-skill-MIT.txt`에 있습니다.
+- [k-skill](https://github.com/NomaDamas/k-skill) (NomaDamas, MIT): 다나와 검색 도우미. 전문은 `LICENSES/k-skill-MIT.txt`
+- [Firecrawl](https://firecrawl.dev): 웹·유튜브 검색
+- [Google AI Studio](https://aistudio.google.com) / Gemini: AI 요약
+- [marked](https://github.com/markedjs/marked), [DOMPurify](https://github.com/cure53/DOMPurify): AI 답변(마크다운)을 안전하게 표시
+- [Vercel](https://vercel.com): 무료 배포
