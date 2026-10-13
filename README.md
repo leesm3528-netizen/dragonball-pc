@@ -1,5 +1,7 @@
 # 드래곤볼 PC 연구소
 
+배포 주소: https://dragonball-pc.vercel.app — 가격표와 빌더는 누구나 볼 수 있고, AI·웹 조사 기능은 접근 코드(`shoppingMall/.env`의 `SITE_ACCESS_CODE`)가 있어야 쓸 수 있습니다.
+
 새 컴퓨터 조립용 부품 최저가 조사와 가성비 꿀조합("드래곤볼")을 찾는 사이트입니다. 로컬에서 실행할 수 있고, Vercel(Hobby, 서울 리전 `icn1`)에 배포할 수 있습니다.
 
 ## 폴더 구조
@@ -36,6 +38,7 @@ pc-build/
 | `GEMINI_FALLBACK_MODELS` | (선택) 다음으로 쓸 모델, 쉼표 구분. 기본 `gemini-flash-lite-latest,gemini-3.5-flash-lite,gemini-3.1-flash-lite` |
 | `AI_GLOBAL_PER_10MIN` | (선택) 모든 사용자 합산 AI·웹 검색 요청 한도, 10분당. 기본 120 |
 | `VIDEO_PER_DAY` | (선택) 모든 사용자 합산 유튜브 영상 요약 한도, 하루당(캐시 적중 제외). 기본 150 |
+| `DANAWA_LIVE` | (선택) `0`이면 다나와 실시간 조회를 끄고 화면에 안내를 띄웁니다. 배포판(Vercel)은 `0`으로 둡니다. 기본 켜짐 |
 
 키는 서버에서만 쓰고 브라우저나 응답, 로그에 내보내지 않습니다. 값을 바꾼 뒤에는 로컬 서버를 재시작하거나 Vercel을 다시 배포하세요.
 
@@ -61,7 +64,9 @@ pc-build/
 - Python 3.14(`.python-version`), 의존성은 `requirements.txt`(beautifulsoup4, soupsieve).
 - 환경 변수 4개(`SITE_ACCESS_CODE`, `FIRECRAWL_API_KEY`, `GOOGLE_API_KEY`, `GEMINI_MODEL`)를 Production(필요하면 Preview에도)에 넣고 다시 배포하세요.
 - 배포 후 `/api/status`가 `{"ok": true, "locked": true, ...}`를 돌려주는지 확인합니다.
-- 다나와가 Vercel(AWS 서울) IP에 빈 결과를 줄 수 있습니다. 그때도 수집해 둔 가격표(`parts.json`)는 그대로 보입니다.
+- 다나와는 Vercel(데이터센터) IP의 접속을 403으로 막습니다(2026-10-13 확인, 서울 리전 포함). 차단을 우회하지 않고, 배포판은 `DANAWA_LIVE=0`으로 실시간 조회를 끈 채 수집해 둔 가격표(`parts.json`)를 보여줍니다. 실시간 조회는 로컬 실행에서 씁니다.
+- 가격 갱신 흐름: 내 PC에서 `scripts/collect.py` 실행 → `public/data/parts.json` 커밋·푸시 → Vercel이 다시 배포(GitHub 연결 시 자동, 아니면 `vercel deploy --prod`).
+- GitHub 자동 배포를 쓰려면 Vercel GitHub 앱이 이 저장소에 접근할 수 있어야 합니다(github.com/settings/installations → Vercel → Repository access에 `dragonball-pc` 추가). 그다음 `vercel git connect`.
 
 ## API
 

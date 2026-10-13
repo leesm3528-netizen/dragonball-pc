@@ -426,6 +426,11 @@ def check_public_host(url, wait=2.0):
 
 # ---------------------------------------------------------------- Danawa
 
+def danawa_live():
+    # Vercel 같은 데이터센터 IP는 다나와가 403으로 막는다. 배포판에서는 DANAWA_LIVE=0으로 끈다
+    return os.environ.get("DANAWA_LIVE", "1").strip() != "0"
+
+
 def danawa_call(fn, *args, deadline, **kw):
     try:
         return fn(*args, timeout=deadline.timeout(12, reserve=1), **kw)
@@ -434,6 +439,8 @@ def danawa_call(fn, *args, deadline, **kw):
     except Exception as e:  # noqa: BLE001  HTTP/파싱 오류는 사용자에게 일반 메시지로
         reason = getattr(e, "reason", e)
         log(f"[danawa] {fn.__name__} {type(e).__name__}: {reason}")
+        if getattr(e, "code", None) == 403:
+            raise ApiError(502, "다나와가 이 서버의 접속을 막았습니다. 내 PC에서 실행하면 실시간 조회가 됩니다.", "danawa_blocked")
         if isinstance(e, TimeoutError) or isinstance(reason, TimeoutError):
             raise ApiError(504, "다나와 응답 시간이 초과됐습니다. 잠시 후 다시 시도하세요.", "upstream_timeout")
         raise ApiError(502, "다나와에서 결과를 받지 못했습니다. 잠시 후 다시 시도하세요.", "upstream_error")
@@ -678,7 +685,9 @@ def route(method, path, query, body, headers, ip):
     if path == "/api/status":
         return {"ok": True, "locked": bool(access_code()), "firecrawl": bool(firecrawl_key()),
                 "gemini": bool(google_key()), "gemini_models": gemini_models(),
-                "region": os.environ.get("VERCEL_REGION") or None}
+                "danawa_live": danawa_live(), "region": os.environ.get("VERCEL_REGION") or None}
+    if path in DANAWA_ROUTES and not danawa_live():
+        raise ApiError(503, "배포판에서는 다나와가 서버 접속을 막아 실시간 조회를 쓸 수 없습니다. 내 PC에서 start-site.bat로 실행하면 됩니다.", "danawa_disabled")
 
     # 이하 모두 접근 코드 필요. 무차별 대입을 막기 위해 제한 검사를 먼저 한다
     limiter = _rl_danawa if path in DANAWA_ROUTES else _rl_ai

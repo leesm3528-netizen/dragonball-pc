@@ -476,6 +476,13 @@ function init() {
     }
     updateLockUi();
     renderFresh();
+    applyDanawaLive(!state.status || state.status.danawa_live !== false);
+  }
+  // 배포판(데이터센터 IP)에서는 다나와 실시간 조회가 막혀 있어 폼을 끄고 안내한다
+  function applyDanawaLive(on) {
+    $$("#live-form input, #live-form button").forEach((el) => { el.disabled = !on; });
+    const note = $("#live-note");
+    if (note) note.hidden = on;
   }
   function renderFresh() {
     const f = freshness(state.collectedAt);
